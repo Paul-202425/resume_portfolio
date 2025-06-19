@@ -1,0 +1,378 @@
+/* ===== Base Styles ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #f3f0f9;
+  color: #333;
+}
+
+a {
+  color: #5b21b6;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+/* ===== Header ===== */
+.header {
+  background: #1f2937;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align left, no big gap */
+  flex-wrap: wrap;
+  gap: 0; /* Remove gap between items */
+}
+
+.header-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-right: 5px; /* Small space between image and text */
+  padding: 0;
+  display: block;
+}
+
+.header-text {
+  margin: 0;
+  padding: 0;
+}
+
+.header-text h1, .header-text p {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Navigation Bar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4c1d95;
+  padding: 1rem 2rem;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+  margin-left: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+/* ===== Dropdown ===== */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  background-color: #6b21a8;
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.dropdown-content li {
+  margin: 0;
+}
+
+.dropdown-content a {
+  padding: 0.75rem 1rem;
+  display: block;
+  color: white;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #4c1d95;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+/* ===== Sections & Cards ===== */
+.section {
+  padding: 2rem;
+  max-width: 960px;
+  margin: auto;
+}
+
+.section h2 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+  color: #4c1d95;
+}
+
+.card {
+  background-color: #e6e0f8;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* ===== Experience Scrollable Cards ===== */
+.card-slider {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: visible;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0;
+}
+
+.exp-card {
+  min-width: 280px;
+  max-width: 400px;
+  flex: 0 0 auto;
+  background-color: #d1c4e9;
+  border-radius: 10px;
+  padding: 1rem;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  height: auto;
+  max-height: none;
+}
+
+/* ===== Lists ===== */
+.skills-list li,
+.honors-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Form ===== */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  background-color: #5b21b6;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1f2937;
+  color: white;
+}
+
+/* ===== Highlighted Info Section ===== */
+.highlight-section {
+  background: #f9f9f9;
+  padding: 2rem;
+  max-width: 960px;
+  margin: 2rem auto;
+  border-left: 5px solid #6b21a8;
+  font-style: italic;
+}
+
+/* ===== Theme Toggle Button ===== */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #5b21b6;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #3f1d7a;
+}
+
+/* ===== Split Card for Skills & Leadership ===== */
+.split-card {
+  background-color: #e6e0f8;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.split-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.split-card .half {
+  flex: 1 1 45%;
+  min-width: 280px;
+}
+
+.split-card .half h3 {
+  margin-bottom: 1rem;
+  color: #4c1d95;
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #4c1d95;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    margin-top: 0.5rem;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  /* Stack split-card halves vertically on mobile */
+  .split-content {
+    flex-direction: column;
+  }
+
+  .split-card .half {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+}
+
+/* ===== Dark Mode ===== */
+body.dark-mode {
+  background-color: #1e1e2f;
+  color: #eee;
+}
+
+body.dark-mode .card,
+body.dark-mode .split-card {
+  background-color: #2e2a3f;
+  color: #eee;
+}
+
+body.dark-mode .header,
+body.dark-mode .footer {
+  background-color: #111827;
+  color: white;
+}
+
+body.dark-mode .exp-card {
+  background-color: #3a3456;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #2a2a3a;
+  color: white;
+  border-color: #555;
+}
+
+body.dark-mode button[type="submit"] {
+  background-color: #4c1d95;
+}
+
+body.dark-mode .highlight-section {
+  background-color: #222;
+  border-left-color: #9333ea;
+  color: #ddd;
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #4c1d95;
+}
+
+body.dark-mode .navbar {
+  background-color: #2e1065;
+}
+
+body.dark-mode .dropdown-content {
+  background-color: #3a2459;
+}
+
+body.dark-mode .dropdown-content a:hover {
+  background-color: #4c1d95;
+}

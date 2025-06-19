@@ -403,3 +403,27 @@ body.dark-mode .edu-item .dot {
 body.dark-mode .edu-content {
   color: #ddd;
 }
+/* ===== Social Links in Header ===== */
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #d1c4e9; /* Light purple on hover */
+}
+
+/* Dark mode styles */
+body.dark-mode .social-links a {
+  color: #ddd;
+}
+
+body.dark-mode .social-links a:hover {
+  color: #bb86fc;
+}

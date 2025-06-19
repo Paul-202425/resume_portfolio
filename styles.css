@@ -363,3 +363,43 @@ body.dark-mode label {
     min-width: 100%;
   }
 }
+/* ===== Timeline Style for Education ===== */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 3px solid #6b21a8;
+}
+
+.edu-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.edu-item .dot {
+  position: absolute;
+  left: -25px;
+  top: 0.3em;
+  width: 16px;
+  height: 16px;
+  background-color: #6b21a8;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #6b21a8;
+}
+
+.edu-content {
+  padding-left: 0.5rem;
+}
+
+body.dark-mode .timeline {
+  border-left-color: #9333ea;
+}
+
+body.dark-mode .edu-item .dot {
+  background-color: #9333ea;
+  box-shadow: 0 0 0 2px #9333ea;
+}
+
+body.dark-mode .edu-content {
+  color: #ddd;
+}

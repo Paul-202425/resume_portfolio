@@ -1,4 +1,4 @@
-/* ===== Base Styles ===== */
+/* ==================== Base Styles ==================== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -15,45 +15,41 @@ h1, h2, h3 {
   margin-top: 0;
 }
 
-/* ===== Header ===== */
+/* ==================== Header ==================== */
 .header {
   background: #1f2937;
   color: #fff;
   text-align: center;
-  padding: 2rem 1rem 2rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align left, no big gap */
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 0; /* Remove gap between items */
+  gap: 1rem;
 }
 
 .header-image img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-right: 5px; /* Small space between image and text */
-  padding: 0;
-  display: block;
 }
 
 .header-text {
-  margin: 0;
-  padding: 0;
+  max-width: 600px;
 }
 
-.header-text h1, .header-text p {
+.header-text h1,
+.header-text p {
   margin: 0;
-  padding: 0;
 }
 
-/* ===== Navigation Bar ===== */
+/* ==================== Navigation Bar ==================== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -64,11 +60,6 @@ h1, h2, h3 {
   position: sticky;
   top: 0;
   z-index: 999;
-}
-
-.navbar .logo {
-  font-weight: bold;
-  font-size: 0.95rem;
 }
 
 .menu-icon {
@@ -96,7 +87,7 @@ h1, h2, h3 {
   display: inline-block;
 }
 
-/* ===== Dropdown ===== */
+/* ==================== Dropdown ==================== */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -129,7 +120,7 @@ h1, h2, h3 {
   display: block;
 }
 
-/* ===== Sections & Cards ===== */
+/* ==================== Sections & Cards ==================== */
 .section {
   padding: 2rem;
   max-width: 960px;
@@ -150,11 +141,10 @@ h1, h2, h3 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
 
-/* ===== Experience Scrollable Cards ===== */
+/* ==================== Experience Cards ==================== */
 .card-slider {
   display: flex;
   overflow-x: auto;
-  overflow-y: visible;
   gap: 1rem;
   scroll-snap-type: x mandatory;
   padding: 1rem 0;
@@ -169,24 +159,21 @@ h1, h2, h3 {
   padding: 1rem;
   scroll-snap-align: start;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-
-  white-space: normal;
-  overflow: visible;
-  text-overflow: unset;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-
-  height: auto;
-  max-height: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ===== Lists ===== */
+.exp-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== Lists ==================== */
 .skills-list li,
 .honors-list li {
   margin-bottom: 0.5rem;
 }
 
-/* ===== Form ===== */
+/* ==================== Form ==================== */
 form {
   display: flex;
   flex-direction: column;
@@ -208,7 +195,7 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-/* ===== Footer ===== */
+/* ==================== Footer ==================== */
 .footer {
   text-align: center;
   padding: 1rem;
@@ -216,7 +203,7 @@ button[type="submit"] {
   color: white;
 }
 
-/* ===== Highlighted Info Section ===== */
+/* ==================== Highlight Section ==================== */
 .highlight-section {
   background: #f9f9f9;
   padding: 2rem;
@@ -226,27 +213,7 @@ button[type="submit"] {
   font-style: italic;
 }
 
-/* ===== Theme Toggle Button ===== */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #5b21b6;
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  z-index: 1000;
-  transition: background 0.3s ease;
-}
-
-.theme-toggle:hover {
-  background-color: #3f1d7a;
-}
-
-/* ===== Split Card for Skills & Leadership ===== */
+/* ==================== Split Cards ==================== */
 .split-card {
   background-color: #e6e0f8;
   border-radius: 12px;
@@ -271,7 +238,83 @@ button[type="submit"] {
   color: #4c1d95;
 }
 
-/* ===== Mobile Responsive ===== */
+/* ==================== Theme Toggle ==================== */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #5b21b6;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #3f1d7a;
+}
+
+/* ==================== Dark Mode ==================== */
+body.dark-mode {
+  background-color: #1e1e2f;
+  color: #eee;
+}
+
+body.dark-mode .card,
+body.dark-mode .split-card,
+body.dark-mode #contact {
+  background-color: #2e2a3f;
+  color: #eee;
+}
+
+body.dark-mode .header,
+body.dark-mode .footer {
+  background-color: #111827;
+  color: white;
+}
+
+body.dark-mode .exp-card {
+  background-color: #3a3456;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #2a2a3a;
+  color: white;
+  border-color: #555;
+}
+
+body.dark-mode button[type="submit"] {
+  background-color: #4c1d95;
+}
+
+body.dark-mode .highlight-section {
+  background-color: #222;
+  border-left-color: #9333ea;
+  color: #ddd;
+}
+
+body.dark-mode .navbar {
+  background-color: #2e1065;
+}
+
+body.dark-mode .dropdown-content {
+  background-color: #3a2459;
+}
+
+body.dark-mode .dropdown-content a:hover {
+  background-color: #4c1d95;
+}
+
+body.dark-mode label {
+  color: #eee;
+}
+
+/* ==================== Responsive ==================== */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
@@ -311,7 +354,6 @@ button[type="submit"] {
     display: block;
   }
 
-  /* Stack split-card halves vertically on mobile */
   .split-content {
     flex-direction: column;
   }
@@ -320,59 +362,4 @@ button[type="submit"] {
     flex: 1 1 100%;
     min-width: 100%;
   }
-}
-
-/* ===== Dark Mode ===== */
-body.dark-mode {
-  background-color: #1e1e2f;
-  color: #eee;
-}
-
-body.dark-mode .card,
-body.dark-mode .split-card {
-  background-color: #2e2a3f;
-  color: #eee;
-}
-
-body.dark-mode .header,
-body.dark-mode .footer {
-  background-color: #111827;
-  color: white;
-}
-
-body.dark-mode .exp-card {
-  background-color: #3a3456;
-}
-
-body.dark-mode input,
-body.dark-mode textarea {
-  background-color: #2a2a3a;
-  color: white;
-  border-color: #555;
-}
-
-body.dark-mode button[type="submit"] {
-  background-color: #4c1d95;
-}
-
-body.dark-mode .highlight-section {
-  background-color: #222;
-  border-left-color: #9333ea;
-  color: #ddd;
-}
-
-body.dark-mode .theme-toggle {
-  background-color: #4c1d95;
-}
-
-body.dark-mode .navbar {
-  background-color: #2e1065;
-}
-
-body.dark-mode .dropdown-content {
-  background-color: #3a2459;
-}
-
-body.dark-mode .dropdown-content a:hover {
-  background-color: #4c1d95;
 }

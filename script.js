@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const themeToggleBtn = document.getElementById("theme-toggle");
+  const bgChangeBtn = document.getElementById("bg-change-btn");
   const menuIcon = document.getElementById("menu-icon");
   const navLinks = document.getElementById("nav-links");
   const dropdown = document.querySelector(".dropdown");
@@ -15,6 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // 🎨 Background Color Change
+  if (bgChangeBtn) {
+    const colors = ["#f3f0f9", "#d0e7ff", "#eeeeee", "#ffefd5", "#222222"];
+    let currentIndex = 0;
+
+    bgChangeBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % colors.length;
+      document.body.style.backgroundColor = colors[currentIndex];
+    });
+  }
+
   // 📱 Mobile Menu Toggle
   if (menuIcon && navLinks) {
     menuIcon.addEventListener("click", (e) => {
@@ -23,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 📂 Dropdown Toggle (mobile only)
+  // 📂 Dropdown Toggle for Mobile
   if (dropdown) {
     const dropdownToggle = dropdown.querySelector("a");
 
@@ -37,10 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ❌ Close nav and dropdown on outside click
+  // ❌ Close menu/dropdown when clicking outside
   document.addEventListener("click", (e) => {
-    const clickedInsideMenu =
-      navLinks.contains(e.target) || menuIcon.contains(e.target);
+    const clickedInsideMenu = navLinks.contains(e.target) || menuIcon.contains(e.target);
     const clickedInsideDropdown = dropdown && dropdown.contains(e.target);
 
     if (!clickedInsideMenu && !clickedInsideDropdown) {
@@ -49,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ✅ Contact Form Submission
+  // 📩 Form Submission
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -58,14 +69,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-const bgChangeBtn = document.getElementById("bg-change-btn");
-
-if (bgChangeBtn) {
-  const colors = ["#f3f0f9", "#d0e7ff", "#eeeeee", "#ffefd5", "#222222"];
-  let currentIndex = 0;
-
-  bgChangeBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % colors.length;
-    document.body.style.backgroundColor = colors[currentIndex];
-  });
-}
